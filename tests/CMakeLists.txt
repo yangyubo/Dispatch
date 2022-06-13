@@ -6,5 +6,8 @@ add_executable(DispatchTests ${DISPATCH_TESTS})
 #    message(FATAL_ERROR "CoreFoundation not found")
 #endif()
 
-target_link_libraries(DispatchTests Dispatch "-framework CoreFoundation")
-
+if (CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+    target_link_libraries(DispatchTests Dispatch "-framework CoreFoundation")
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    target_link_libraries(DispatchTests Dispatch)
+endif()

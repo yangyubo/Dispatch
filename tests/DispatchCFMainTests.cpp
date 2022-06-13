@@ -4,6 +4,7 @@
 // Copyright (c) 2022 - 2022 Dispatch authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
+#if defined(__APPLE__)
 
 #include "DispatchTests.h"
 #include <stdatomic.h>
@@ -45,3 +46,5 @@ TEST_CASE("Concurrent Perform") {
 }
 
 }
+
+#endif
