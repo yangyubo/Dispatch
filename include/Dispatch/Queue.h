@@ -163,7 +163,7 @@ public:
             AutoreleaseFrequency autoreleaseFrequency,
             const DispatchQueue* _Nullable queue);
 
-    DispatchQueue(const std::string& label): DispatchQueue(
+    explicit DispatchQueue(const std::string& label): DispatchQueue(
             label,
             DispatchQoS::unspecified(),
             Attributes::NONE,
@@ -256,7 +256,7 @@ public:
     /// - parameter execute: The work item to be invoked on the queue.
     /// - SeeAlso: `async(execute:)`
     ///
-    void sync(const DispatchWorkItem& workItem) {
+    void sync(const DispatchWorkItem& workItem) const {
         dispatch_sync(_wrapped, workItem._block);
     }
 
@@ -383,7 +383,7 @@ public:
         }
         return result;
     }
-    inline void sync(DispatchWorkItemFlags flags, DISPATCH_NOESCAPE DispatchBlock work) {
+    inline void sync(DispatchWorkItemFlags flags, DISPATCH_NOESCAPE DispatchBlock work) const {
         if (flags == DispatchWorkItemFlags::BARRIER) {
             dispatch_barrier_sync(_wrapped, work);
         } else if (flags != DispatchWorkItemFlags::NONE) {
@@ -414,7 +414,7 @@ public:
             const DispatchTime& deadline,
             DispatchBlock work,
             const DispatchQoS& qos = DispatchQoS::unspecified(),
-            DispatchWorkItemFlags flags = DispatchWorkItemFlags::NONE)
+            DispatchWorkItemFlags flags = DispatchWorkItemFlags::NONE) const
     {
         if (qos != DispatchQoS::unspecified() || flags != DispatchWorkItemFlags::NONE) {
             auto workItem = DispatchWorkItem(work, qos, flags);
@@ -445,7 +445,7 @@ public:
             DispatchWallTime wallDeadline,
             DispatchBlock work,
             const DispatchQoS& qos = DispatchQoS::unspecified(),
-            DispatchWorkItemFlags flags = DispatchWorkItemFlags::NONE)
+            DispatchWorkItemFlags flags = DispatchWorkItemFlags::NONE) const
     {
         if (qos != DispatchQoS::unspecified() || flags != DispatchWorkItemFlags::NONE) {
             auto workItem = DispatchWorkItem(work, qos, flags);
@@ -465,7 +465,7 @@ public:
     /// - SeeAlso: `asyncAfter(deadline:qos:flags:execute:)`
     /// - SeeAlso: `DispatchTime`
     ///
-    inline void asyncAfter(DispatchTime deadline, const DispatchWorkItem& execute) {
+    inline void asyncAfter(DispatchTime deadline, const DispatchWorkItem& execute) const {
         dispatch_after(deadline.rawValue, _wrapped, execute._block);
     }
 
@@ -479,18 +479,18 @@ public:
     /// - SeeAlso: `asyncAfter(wallDeadline:qos:flags:execute:)`
     /// - SeeAlso: `DispatchTime`
     ///
-    inline void asyncAfter(DispatchWallTime wallDeadline, const DispatchWorkItem& execute) {
+    inline void asyncAfter(DispatchWallTime wallDeadline, const DispatchWorkItem& execute) const {
         dispatch_after(wallDeadline.rawValue, _wrapped, execute._block);
     }
 
-    inline DispatchQoS qos() {
+    [[nodiscard]] inline DispatchQoS qos() const {
         int relPri = 0;
         auto rawQoS = dispatch_queue_get_qos_class(_wrapped, &relPri);
         auto cls = DispatchQoS::QoSClass(rawQoS);
-        return DispatchQoS(cls, relPri);
+        return {cls, relPri};
     }
 
-    inline void apply(size_t iterations, DISPATCH_NOESCAPE void (^work)(size_t)) {
+    inline void apply(size_t iterations, DISPATCH_NOESCAPE void (^work)(size_t)) const {
         dispatch_apply(iterations, _wrapped, ^(size_t i) {
             work(i);
         });

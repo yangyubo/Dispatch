@@ -157,7 +157,7 @@ public:
         return *this;
     }
     inline ~DispatchSource() override {
-        dispatch_release(wrapped());
+        dispatch_release(_wrapped);
     }
 
     // MARK: - DispatchSourceProtocol
