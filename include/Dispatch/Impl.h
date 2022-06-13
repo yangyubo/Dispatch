@@ -298,15 +298,23 @@ inline void DispatchQueue::_async(
     }
 }
 
-inline void DispatchQueue::preconditionTest(DispatchPredicate condition) const {
+inline bool DispatchQueue::_dispatchPreconditionTest(DispatchPredicate condition) const {
     switch (condition) {
         case DispatchPredicate::ON_QUEUE:
             dispatch_assert_queue(_wrapped);
+            break;
         case DispatchPredicate::ON_QUEUE_AS_BARRIER:
             dispatch_assert_queue_barrier(_wrapped);
+            break;
         case DispatchPredicate::NOT_ON_QUEUE:
             dispatch_assert_queue_not(_wrapped);
+            break;
     }
+    return true;
+}
+
+inline void DispatchQueue::dispatchPrecondition(DispatchPredicate condition) const {
+  DISPATCH_ASSERT(_dispatchPreconditionTest(condition), "Precondition failed");
 }
 
 inline void DispatchQueue::async(const DispatchGroup& group, const DispatchWorkItem& workItem) const {

@@ -86,7 +86,7 @@ public:
         }
     }
 
-    void preconditionTest(DispatchPredicate condition) const;
+    void dispatchPrecondition(DispatchPredicate condition) const;
 
     enum class Attributes: uint64_t {
         NONE               = 0,
@@ -498,7 +498,9 @@ public:
 
 
     dispatch_queue_t _wrapped {nullptr};
+
 private:
+
     explicit DispatchQueue(dispatch_queue_t queue): _wrapped(queue) {}
     DispatchQueue(const std::string& label, dispatch_queue_attr_t _Nullable attr);
     DispatchQueue(const std::string& label, dispatch_queue_attr_t _Nullable attr, const DispatchQueue* _Nullable queue);
@@ -510,6 +512,8 @@ private:
             DispatchBlock work
     ) const;
 
+    [[nodiscard]] bool _dispatchPreconditionTest(DispatchPredicate condition) const;
+
     inline dispatch_object_t wrapped() override {
         return _wrapped;
     }
@@ -520,10 +524,6 @@ private:
     friend class DispatchGroup;
     friend class DispatchSource;
     friend class DispatchData;
+
 };
 
-inline void dispatchPrecondition(DispatchPredicate condition, const DispatchQueue& queue) {
-#ifndef NDEBUG
-    queue.preconditionTest(condition);
-#endif
-}

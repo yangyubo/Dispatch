@@ -60,7 +60,6 @@
       <option name="FOR_STATEMENT_WRAP" value="1" />
       <option name="ASSIGNMENT_WRAP" value="1" />
       <indentOptions>
-        <option name="INDENT_SIZE" value="2" />
         <option name="CONTINUATION_INDENT_SIZE" value="4" />
       </indentOptions>
     </codeStyleSettings>
