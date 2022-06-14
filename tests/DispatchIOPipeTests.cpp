@@ -23,7 +23,7 @@ static void test_stop() {
     semaphore.signal();
 }
 
-inline static void test_group_wait(const DispatchGroup& g) {
+static void test_group_wait(const DispatchGroup& g) {
     auto res = g.wait(DispatchTime::now() + DispatchTimeInterval::seconds(25));
     if (res == DispatchTimeoutResult::TIMED_OUT) {
         FAIL("group wait timed out");
