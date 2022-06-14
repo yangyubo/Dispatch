@@ -16,3 +16,5 @@ using namespace std::chrono;
 using namespace std::chrono_literals;
 using namespace std::this_thread;
 
+char * dispatch_test_get_large_file();
+void dispatch_test_release_large_file(const char *path);

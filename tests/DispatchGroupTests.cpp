@@ -43,7 +43,6 @@ static DispatchGroup create_group(size_t count, unsigned int delay) {
                 sleep(delay);
                 fprintf(stderr, "done.\n");
             }
-            queue;
         });
   }
   return group;

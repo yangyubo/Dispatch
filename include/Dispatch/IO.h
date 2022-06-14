@@ -12,7 +12,7 @@
 #include "Dispatch/Data.h"
 #include <dispatch/dispatch.h>
 
-class DispatchIO: DispatchObject {
+class DispatchIO: public DispatchObject {
 
 public:
 
