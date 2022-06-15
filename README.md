@@ -45,6 +45,8 @@ int main() {
 ## TODO
 
 - Support `DISPATCH_SOURCE_TYPE_PROC`.
+- Support `DISPATCH_SOURCE_TYPE_VM`.
+- Support `DISPATCH_SOURCE_TYPE_VNODE`.
 
 ## Documentation
 

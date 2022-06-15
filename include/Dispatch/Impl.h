@@ -424,22 +424,22 @@ inline static int64_t toInt64Clamped(double value) {
 }
 
 
-inline DispatchTimeInterval DispatchTimeInterval::seconds(int s) {
+inline DispatchTimeInterval DispatchTimeInterval::seconds(int64_t s) {
     auto i = clampedInt64Product(int64_t(s), int64_t(NSEC_PER_SEC));
     return DispatchTimeInterval(i);
 }
 
-inline DispatchTimeInterval DispatchTimeInterval::milliseconds(int ms) {
+inline DispatchTimeInterval DispatchTimeInterval::milliseconds(int64_t ms) {
     auto i = clampedInt64Product(int64_t(ms), int64_t(NSEC_PER_MSEC));
     return DispatchTimeInterval(i);
 }
 
-inline DispatchTimeInterval DispatchTimeInterval::microseconds(int us) {
+inline DispatchTimeInterval DispatchTimeInterval::microseconds(int64_t us) {
     auto i = clampedInt64Product(int64_t(us), int64_t(NSEC_PER_USEC));
     return DispatchTimeInterval(i);
 }
 
-inline DispatchTimeInterval DispatchTimeInterval::nanoseconds(int ns) {
+inline DispatchTimeInterval DispatchTimeInterval::nanoseconds(int64_t ns) {
     return DispatchTimeInterval(ns);
 }
 

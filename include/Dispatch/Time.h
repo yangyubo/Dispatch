@@ -95,10 +95,10 @@ struct DispatchTimeInterval {
 
     explicit DispatchTimeInterval(int64_t rawValue) : rawValue(rawValue) {}
 
-    static DispatchTimeInterval seconds(int s);
-    static DispatchTimeInterval milliseconds(int ms);
-    static DispatchTimeInterval microseconds(int us);
-    static DispatchTimeInterval nanoseconds(int ns);
+    static DispatchTimeInterval seconds(int64_t s);
+    static DispatchTimeInterval milliseconds(int64_t ms);
+    static DispatchTimeInterval microseconds(int64_t us);
+    static DispatchTimeInterval nanoseconds(int64_t ns);
     static DispatchTimeInterval& never();
 
     bool operator==(const DispatchTimeInterval& other) const;
