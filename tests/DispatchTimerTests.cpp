@@ -13,21 +13,13 @@
 #include <cstring>
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.suspend-timer");
+static auto dq = DispatchQueue("Dispatch.test.timer");
 
 static void test_stop() {
     semaphore.signal();
 }
 
 static bool finalized = false;
-
-static void
-test_fin(void *cxt)
-{
-    CHECK_MESSAGE(true, "finalizer ran");
-    finalized = true;
-    test_stop();
-}
 
 static void test_timer() {
     const int stop_at = 3;

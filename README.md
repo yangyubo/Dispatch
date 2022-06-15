@@ -47,6 +47,7 @@ int main() {
 - Support `DISPATCH_SOURCE_TYPE_PROC`.
 - Support `DISPATCH_SOURCE_TYPE_VM`.
 - Support `DISPATCH_SOURCE_TYPE_VNODE`.
+- Make `DispatchTime` compatible with `std::chrono::time_point`.
 
 ## Documentation
 
