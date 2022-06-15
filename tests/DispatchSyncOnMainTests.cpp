@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ static void work() {
     });
 }
 
-TEST_CASE("Dispatch Sync on main") {
+TEST_CASE("Dispatch++ Sync on main") {
      // <rdar://problem/7181849>
     auto dq = new DispatchQueue("foo.bar");
     dq->async(^{

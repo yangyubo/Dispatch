@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@
 #endif
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.proc");
+static auto dq = DispatchQueue("Dispatch++.test.proc");
 
 static void test_stop() {
     semaphore.signal();
@@ -112,7 +112,7 @@ static void test_proc(pid_t bad_pid)
     });
 }
 
-TEST_CASE("Dispatch Proc") {
+TEST_CASE("Dispatch++ Proc") {
     test_proc(0);
     semaphore.wait();
 }

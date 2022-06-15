@@ -1,13 +1,13 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
 #include "DispatchTests.h"
 
-TEST_CASE("Dispatch After") {
+TEST_CASE("Dispatch++ After") {
     __block DispatchQueue queue = DispatchQueue{"dispatch.unittest.dispatch-after"};
     auto semaphore = std::make_shared<DispatchSemaphore>(0);
 

@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -222,7 +222,7 @@ test_source_write(int delay)
 static void
 test_dispatch_read(int delay)
 {
-    printf("\nDispatch Read %s: %s\n", delay_names[delay], "anonymous");
+    printf("\nDispatch++ Read %s: %s\n", delay_names[delay], "anonymous");
 
     dispatch_fd_t readfd, writefd;
     test_make_pipe(&readfd, &writefd);
@@ -275,7 +275,7 @@ test_dispatch_read(int delay)
 static void
 test_dispatch_write(int delay)
 {
-    printf("\nDispatch Write %s: %s\n", delay_names[delay], "anonymous");
+    printf("\nDispatch++ Write %s: %s\n", delay_names[delay], "anonymous");
 
     dispatch_fd_t readfd, writefd;
     test_make_pipe(&readfd, &writefd);
@@ -344,7 +344,7 @@ test_dispatch_write(int delay)
     close(writefd);
 }
 
-TEST_CASE("Dispatch IO Pipe") {
+TEST_CASE("Dispatch++ IO Pipe") {
     DispatchQueue::global().async(^{
       test_source_read(DISPATCH_TEST_IMMEDIATE);
       test_source_read(DISPATCH_TEST_DELAYED);

@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -9,9 +9,9 @@
 
 #include <string>
 #include <dispatch/dispatch.h>
-#include "Dispatch/QoS.h"
-#include "Dispatch/Block.h"
-#include "Dispatch/Utils.h"
+#include "Dispatch++/QoS.h"
+#include "Dispatch++/Block.h"
+#include "Dispatch++/Utils.h"
 
 DISPATCH_NOTHROW DISPATCH_NORETURN
 inline void dispatchMain() {

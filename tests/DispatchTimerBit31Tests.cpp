@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -16,7 +16,7 @@
 #endif
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.timer-bit31");
+static auto dq = DispatchQueue("Dispatch++.test.timer-bit31");
 
 static void test_stop() {
     semaphore.signal();
@@ -48,7 +48,7 @@ static void test_timer() {
     s->resume();
 }
 
-TEST_CASE("Dispatch Source Timer, bit 31") {
+TEST_CASE("Dispatch++ Source Timer, bit 31") {
     test_timer();
     semaphore.wait();
 }

@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -18,7 +18,7 @@
 #endif
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.io-muxed");
+static auto dq = DispatchQueue("Dispatch++.test.io-muxed");
 
 static void test_stop() {
     semaphore.signal();
@@ -197,7 +197,7 @@ test_socket_muxed()
     closesocket(listenfd);
 }
 
-TEST_CASE("Dispatch IO Muxed") {
+TEST_CASE("Dispatch++ IO Muxed") {
     dq.async(^{
       test_file_muxed();
       test_socket_muxed();

@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 #include "DispatchTests.h"
@@ -14,12 +14,12 @@
 
 #define ACCEPTABLE_DRIFT 0.001
 
-TEST_CASE("Dispatch Timer Drift") {
+TEST_CASE("Dispatch++ Timer Drift") {
     __block uint32_t count = 0;
     __block double last_jitter = 0;
     __block double drift_sum = 0;
     __block auto semaphore = DispatchSemaphore(0);
-    auto q = new DispatchQueue("tech.shifor.Dispatch.DispatchTimerDriftTests");
+    auto q = new DispatchQueue("tech.shifor.Dispatch++.DispatchTimerDriftTests");
 
     // 100 times a second
     uint64_t interval = 1000000000 / 100;

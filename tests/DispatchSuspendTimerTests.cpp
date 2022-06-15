@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@
 #include <cstdio>
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.suspend-timer");
+static auto dq = DispatchQueue("Dispatch++.test.suspend-timer");
 
 static void test_stop() {
     semaphore.signal();
@@ -78,7 +78,7 @@ static void test_timer() {
     tweedledum->resume();
 }
 
-TEST_CASE("Dispatch Suspend Timer") {
+TEST_CASE("Dispatch++ Suspend Timer") {
     test_timer();
     semaphore.wait();
 }

@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ static void test_context_for_key() {
     CHECK_MESSAGE(ctxt == ctxtValues[0], "get context for app");
 }
 
-TEST_CASE("Dispatch Queue Specific") {
+TEST_CASE("Dispatch++ Queue Specific") {
     // rdar://problem/8429188
     auto q = DispatchQueue { "dispatch.unittest.dispatch-context_for-key" };
     __block auto semaphore = DispatchSemaphore(0);

@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -13,7 +13,7 @@
 #include <cstring>
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.timer");
+static auto dq = DispatchQueue("Dispatch++.test.timer");
 
 static void test_stop() {
     semaphore.signal();
@@ -69,7 +69,7 @@ static void test_timer() {
     s->resume();
 }
 
-TEST_CASE("Dispatch Source Timer") {
+TEST_CASE("Dispatch++ Source Timer") {
     test_timer();
     semaphore.wait();
 }

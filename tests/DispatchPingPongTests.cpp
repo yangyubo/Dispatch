@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -12,7 +12,7 @@
 #endif
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.io-muxed");
+static auto dq = DispatchQueue("Dispatch++.test.io-muxed");
 
 static void test_stop() {
     semaphore.signal();
@@ -30,7 +30,7 @@ static void pingpongloop(const DispatchGroup& group, const DispatchQueue& ping, 
     }
 }
 
-TEST_CASE("Dispatch Ping Pong") {
+TEST_CASE("Dispatch++ Ping Pong") {
     auto ping = DispatchQueue("ping");
     auto pong = DispatchQueue("pong");
 

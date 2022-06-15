@@ -7,14 +7,13 @@
 
 #pragma once
 
-#include <chrono>
-#include <thread>
-#include "doctest.h"
-#include "Dispatch++/Dispatch.h"
-
-using namespace std::chrono;
-using namespace std::chrono_literals;
-using namespace std::this_thread;
-
-char * dispatch_test_get_large_file();
-void dispatch_test_release_large_file(const char *path);
+#include <Dispatch++/Object.h>
+#include <Dispatch++/QoS.h>
+#include <Dispatch++/Queue.h>
+#include <Dispatch++/Data.h>
+#include <Dispatch++/Group.h>
+#include <Dispatch++/IO.h>
+#include <Dispatch++/Semaphore.h>
+#include <Dispatch++/Source.h>
+#include <Dispatch++/Time.h>
+#include <Dispatch++/Impl.h>

@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 #include "DispatchTests.h"
@@ -39,7 +39,7 @@
 #endif
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.group");
+static auto dq = DispatchQueue("Dispatch++.test.group");
 
 static void test_stop() {
     semaphore.signal();
@@ -691,7 +691,7 @@ static void test_io_from_io() // rdar://problem/8388909
 #endif // DISPATCHTEST_IO
 
 
-TEST_CASE("Dispatch IO") {
+TEST_CASE("Dispatch++ IO") {
     dispatch_async(dq._wrapped, ^{
       bool from_path = false;
       do {

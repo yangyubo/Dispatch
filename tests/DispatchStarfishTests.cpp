@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@
 #endif
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.starfish");
+static auto dq = DispatchQueue("Dispatch++.test.starfish");
 
 static void test_stop() {
     semaphore.signal();
@@ -162,7 +162,7 @@ void do_test() {
     }
 }
 
-TEST_CASE("Dispatch Starfish") {
+TEST_CASE("Dispatch++ Starfish") {
     do_test();
     semaphore.wait();
 }

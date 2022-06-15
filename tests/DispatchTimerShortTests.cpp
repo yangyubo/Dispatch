@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -108,7 +108,7 @@ static void test_short_timer() {
     s->resume();
 }
 
-TEST_CASE("Dispatch Short Timer") { // <rdar://problem/7765184>
+TEST_CASE("Dispatch++ Short Timer") { // <rdar://problem/7765184>
     mach_timebase_info(&tbi);
     test_short_timer();
     semaphore.wait();

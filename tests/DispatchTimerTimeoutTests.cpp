@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ static void test_stop() {
     semaphore.signal();
 }
 
-TEST_CASE("Dispatch Source Timeout") {
+TEST_CASE("Dispatch++ Source Timeout") {
     // <rdar://problem/8015967>
     uint64_t mini_interval = 100ull; // 100 ns
     uint64_t long_interval = 2000000000ull; // 2 secs

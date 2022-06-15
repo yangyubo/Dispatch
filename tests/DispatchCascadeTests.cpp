@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -85,7 +85,7 @@ static void cascade(void *context) {
     }
 }
 
-TEST_SUITE("Dispatch Cascade") {
+TEST_SUITE("Dispatch++ Cascade") {
 
 TEST_CASE("cascade") {
     for (int i=0; i < QUEUES; ++i) {

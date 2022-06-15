@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 #include "DispatchTests.h"
@@ -28,14 +28,14 @@
 #endif
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.group");
+static auto dq = DispatchQueue("Dispatch++.test.group");
 
 static DispatchGroup create_group(size_t count, unsigned int delay) {
     size_t i;
     auto group = DispatchGroup();
 
     for (i = 0; i < count; ++i) {
-        auto queue = DispatchQueue("Dispatch.test.create_group");
+        auto queue = DispatchQueue("Dispatch++.test.create_group");
 
         queue.async(group, ^{
             if (delay) {
@@ -151,7 +151,7 @@ static void (^test_group)(void) = ^ {
     });
 };
 
-TEST_CASE("Dispatch Group") {
+TEST_CASE("Dispatch++ Group") {
   dq.async(test_group);
   semaphore.wait();
   // Dispatch object could not be released with suspended state, so resume it before exit.

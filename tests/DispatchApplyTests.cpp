@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ static void (^busythread)(void) = ^{
     atomic_fetch_add(&busy_threads_finished, 1);
 };
 
-TEST_SUITE("Dispatch Apply") {
+TEST_SUITE("Dispatch++ Apply") {
 
 DispatchQueue dq = DispatchQueue::global();
 

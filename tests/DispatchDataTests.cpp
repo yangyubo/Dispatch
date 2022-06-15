@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -72,9 +72,9 @@ static void test_cleanup() // <rdar://problem/9843440>
 }
 
 
-TEST_CASE("Dispatch Data") {
+TEST_CASE("Dispatch++ Data") {
     g = new DispatchGroup();
-    q = new DispatchQueue("tech.shifor.Dispatch.DispatchDataTests");
+    q = new DispatchQueue("tech.shifor.Dispatch++.DispatchDataTests");
     __block auto semaphore = DispatchSemaphore(0);
 
     test_concat();

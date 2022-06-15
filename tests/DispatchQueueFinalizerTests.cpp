@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -16,7 +16,7 @@
 #include <cassert>
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.queue-finalizer");
+static auto dq = DispatchQueue("Dispatch++.test.queue-finalizer");
 
 static void test_stop() {
     semaphore.signal();
@@ -30,7 +30,7 @@ static void never_call(void *ctxt) {
     CHECK_MESSAGE(ctxt == nullptr, "correct context");
 }
 
-TEST_CASE("Dispatch Queue Finalizer") {
+TEST_CASE("Dispatch++ Queue Finalizer") {
     auto number = random();
     ctxt_magic = std::make_shared<long>(number);
 
@@ -38,10 +38,10 @@ TEST_CASE("Dispatch Queue Finalizer") {
     CHECK(ctxt_magic != nullptr);
 
     {
-        auto __block q = DispatchQueue("Dispatch.testing.finalizer");
+        auto __block q = DispatchQueue("Dispatch++.testing.finalizer");
 
         {
-            auto q_null = DispatchQueue("Dispatch.testing.finalizer.context_null");
+            auto q_null = DispatchQueue("Dispatch++.testing.finalizer.context_null");
 
             q_null.setContext(ctxt_null, ^(std::shared_ptr<long> &value) {
               CHECK_MESSAGE(false, "never_call should not run");

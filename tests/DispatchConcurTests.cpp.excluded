@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
-// This source file is part of the Dispatch open source project
+// This source file is part of the Dispatch++ open source project
 //
-// Copyright (c) 2022 - 2022 Dispatch authors
+// Copyright (c) 2022 - 2022 Dispatch++ authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //------------------------------------------------------------------------------
 
@@ -213,7 +213,7 @@ static DispatchQueue* create_queue(long width, DispatchQueue* tq, long *qw, cons
     return queue;
 }
 
-TEST_SUITE("Dispatch Private Concurrent/Wide Queue") {
+TEST_SUITE("Dispatch++ Private Concurrent/Wide Queue") {
 // <rdar://problem/8049506&8169448&8186485>
 
 TEST_CASE("Concurrent Perform") {
