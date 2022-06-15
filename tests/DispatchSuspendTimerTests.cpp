@@ -10,7 +10,7 @@
 #include <cstdio>
 
 static auto semaphore = DispatchSemaphore(0);
-static auto dq = DispatchQueue("Dispatch.test.proc");
+static auto dq = DispatchQueue("Dispatch.test.suspend-timer");
 
 static void test_stop() {
     semaphore.signal();
