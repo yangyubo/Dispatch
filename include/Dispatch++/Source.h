@@ -65,14 +65,17 @@ public:
 };
 
 class DispatchSourceUserDataAdd: public DispatchSourceProtocol {
+public:
     virtual void dataAdd(uint data) = 0;
 };
 
 class DispatchSourceUserDataOr: public DispatchSourceProtocol {
+public:
     virtual void dataOr(uint data) = 0;
 };
 
 class DispatchSourceUserDataReplace: public DispatchSourceProtocol {
+public:
     virtual void dataReplace(uint data) = 0;
 };
 
